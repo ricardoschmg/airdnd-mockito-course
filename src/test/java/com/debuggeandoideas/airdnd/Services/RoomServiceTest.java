@@ -9,6 +9,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extensions;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -17,15 +19,17 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class RoomServiceTest {
-
+    @Mock
     private RoomRepository roomRepositoryMock;
+    @InjectMocks
     private RoomService roomService;
 
-    @BeforeEach
-    void init() {
-      this.roomRepositoryMock = mock(RoomRepository.class);
-      this.roomService = new RoomService(roomRepositoryMock);
-    }
+   // @BeforeEach
+   // void init() {
+   //   this.roomRepositoryMock = mock(RoomRepository.class);
+   //   this.roomService = new RoomService(roomRepositoryMock);
+   // }
+
 
     @Test
     @DisplayName("Should get all rows available in room repository")
