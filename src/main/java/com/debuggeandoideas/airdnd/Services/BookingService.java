@@ -47,6 +47,7 @@ public class BookingService {
 
         if (booking.getPrepaid()) {
             this.paymentService.pay(booking, price);
+            this.paymentService.pay(booking, price);
         }
 
         booking.setRoom(room);

@@ -1,7 +1,9 @@
 package com.debuggeandoideas.airdnd.Services.utils;
 
+import com.debuggeandoideas.airdnd.dto.BookingDto;
 import com.debuggeandoideas.airdnd.dto.RoomDto;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +28,26 @@ public class DataDummy {
         new RoomDto("E", 2),
         new RoomDto("F", 3)
     );
+
+    public static final BookingDto default_booking_req_1 = new BookingDto(
+            "1836",
+            LocalDate.of(2023,06,10),
+            LocalDate.of(2023,06,11),
+            2,
+            false);
+
+    public static final BookingDto default_booking_req_2 = new BookingDto(
+            "1836",
+            LocalDate.of(2023,06,10),
+            LocalDate.of(2023,06,12),
+            2,
+            false);
+    public static final BookingDto default_booking_req_3 = new BookingDto(
+            "1836",
+            LocalDate.of(2023,06,10),
+            LocalDate.of(2023,06,13),
+            2,
+            false);
 
     DataDummy (){
 

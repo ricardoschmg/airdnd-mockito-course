@@ -10,6 +10,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -41,5 +44,19 @@ public class BookingServiceTest {
         assertEquals(expected,result);
     }
 
+    @Test
+    @DisplayName("booking should works")
+    void booking () {
+        final var roomId = UUID.randomUUID().toString();
+        when (roomServiceMock.findAvailableRoom(DataDummy.default_booking_req_2)).
+                thenReturn(DataDummy.default_rooms_list.get(0));
+
+        when (bookingRepositoryMock.save(DataDummy.default_booking_req_2)).
+                 thenReturn(roomId);
+
+        var result = bookingService.booking(DataDummy.default_booking_req_2);
+
+        assertEquals(roomId, result);
+    }
 
 }
